@@ -1,0 +1,37 @@
+{
+  "name": "hexlet-co",
+  "version": "0.0.3",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register test.js",
+    "build": "babel index.js --out-dir dist",
+    "eslint": "eslint",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexlet-components/js-co.git"
+  },
+  "author": "Kirill Mokevnin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hexlet-components/js-co/issues"
+  },
+  "homepage": "https://github.com/hexlet-components/js-co#readme",
+  "dependencies": {
+    "hexlet-pairs": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "*",
+    "eslint-plugin-flowtype": "*",
+    "babel-polyfill": "*",
+    "babel-core": "*",
+    "babel-preset-latest": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-plugin-import": "*",
+    "mocha": "*"
+  }
+}
