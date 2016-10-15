@@ -2,41 +2,24 @@
 
 import 'babel-polyfill';
 
-const onFulfilledGenerator = (reject, iterator) => next => result => {
-  try {
-    const ret = iterator.next(result);
-    return next(ret);
-  } catch (e) {
-    return reject(e);
-  }
-};
+export default (generator, ...args) => {
+  const iterator = generator(...args);
 
-const onRejectedGenerator = (reject, iterator) => next => err => {
-  try {
-    const ret = iterator.throw(err);
-    return next(ret);
-  } catch (e) {
-    return reject(e);
-  }
-};
-
-const nextGenerator = (resolve, onFulfilled, onRejected) => {
-  const next = ({ done, value }) => {
-    if (done) {
-      return resolve(value);
+  const next = result => {
+    const value = Promise.resolve(result.value);
+    if (result.done) {
+      return value;
     }
-    return value.then(onFulfilled(next), onRejected(next));
+
+    return value.then(
+      res => next(iterator.next(res)),
+      err => next(iterator.throw(err))
+    );
   };
 
-  return next;
+  try {
+    return next(iterator.next());
+  } catch (err) {
+    return Promise.reject(err);
+  }
 };
-
-export default (generator: () => any, ...args: Array<any>) =>
-  new Promise((resolve, reject) => {
-    const iterator = generator(...args);
-    const onFulfilled = onFulfilledGenerator(reject, iterator);
-    const onRejected = onRejectedGenerator(reject, iterator);
-    const next = nextGenerator(resolve, onFulfilled, onRejected);
-
-    onFulfilled(next)({ done: false, value: Promise.resolve() });
-  });
