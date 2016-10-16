@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "babel-eslint": "*",
-    "eslint-plugin-flowtype": "*",
     "babel-polyfill": "*",
     "babel-core": "*",
     "babel-preset-latest": "*",
@@ -32,6 +31,7 @@
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-import": "*",
+    "eslint-plugin-flowtype": "*",
     "mocha": "*"
   }
 }
