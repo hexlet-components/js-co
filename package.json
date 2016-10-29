@@ -6,7 +6,7 @@
   "scripts": {
     "documentation": "documentation",
     "test": "mocha --compilers js:babel-core/register test.js",
-    "build": "babel index.js --out-dir dist",
+    "build": "babel src/index.js --out-dir dist",
     "eslint": "eslint",
     "prepublish": "npm run build"
   },
