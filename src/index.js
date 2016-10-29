@@ -15,7 +15,7 @@ import 'babel-polyfill';
  *   console.error(err.stack);
  * });
  */
-export default (generator: () => void, ...args: any) => {
+const co = (generator: () => void, ...args: any) => {
   const iterator = generator(...args);
 
   const next = result => {
@@ -36,3 +36,5 @@ export default (generator: () => void, ...args: any) => {
     return Promise.reject(err);
   }
 };
+
+export default co;
