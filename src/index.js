@@ -2,7 +2,20 @@
 
 import 'babel-polyfill';
 
-export default (generator, ...args) => {
+/**
+ * Generator based control flow
+ * @name co
+ * @example
+ * co(function* () {
+ *   const result = yield Promise.resolve(true);
+ *   return result;
+ * }).then(value => {
+ *   console.log(value);
+ * }, err => {
+ *   console.error(err.stack);
+ * });
+ */
+export default (generator: () => void, ...args: any) => {
   const iterator = generator(...args);
 
   const next = result => {

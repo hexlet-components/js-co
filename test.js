@@ -1,5 +1,5 @@
 import assert from 'assert';
-import co from './index';
+import co from './src/index';
 
 const getPromise = (val, err) =>
   new Promise((resolve, reject) => {
@@ -54,6 +54,26 @@ describe('HexletCo', () => {
         error = err;
       }
       assert.equal(error.message, 'boom');
+    });
+  });
+
+  it('set 5', done => {
+    co(function* () {
+      const a = yield getPromise(1);
+      return a;
+    }).then(a => {
+      assert.deepEqual(a, 1);
+      done();
+    });
+  });
+
+  it('set 6', done => {
+    co(function* () {
+      const result = yield getPromise(1, new Error('boom'));
+      return result;
+    }).catch(error => {
+      assert.equal(error.message, 'boom');
+      done();
     });
   });
 });

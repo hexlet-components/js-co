@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "documentation": "documentation",
     "test": "mocha --compilers js:babel-core/register test.js",
     "build": "babel index.js --out-dir dist",
     "eslint": "eslint",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
   "dependencies": {
+    "documentation": "^4.0.0-beta11",
     "hexlet-pairs": "*"
   },
   "devDependencies": {
