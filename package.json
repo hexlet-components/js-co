@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "documentation": "documentation",
-    "test": "mocha --compilers js:babel-core/register test.js",
-    "build": "babel src/index.js --out-dir dist",
+    "test": "jest --colors",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps",
     "eslint": "eslint",
     "prepublish": "npm run build"
   },
@@ -21,19 +21,25 @@
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
   "dependencies": {
-    "documentation": "^4.0.0-beta11",
-    "hexlet-pairs": "*"
+  },
+  "dependencies": {
+    "hexlet-pairs": "*",
+    "documentation": "^4.0.0-rc.1",
+    "source-map-support": "*",
+    "babel-preset-env": "*",
+    "babel-preset-flow": "*",
+    "babel-preset-stage-0": "*",
+    "debug": "*"
   },
   "devDependencies": {
     "babel-eslint": "*",
     "babel-polyfill": "*",
     "babel-core": "*",
-    "babel-preset-latest": "*",
-    "babel-preset-stage-0": "*",
+    "babel-cli": "*",
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-flowtype": "*",
-    "mocha": "*"
+    "jest": "*"
   }
 }

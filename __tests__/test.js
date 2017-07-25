@@ -1,5 +1,4 @@
-import assert from 'assert';
-import co from './src/index';
+import co from '../src';
 
 const getPromise = (val, err) =>
   new Promise((resolve, reject) => {
@@ -14,7 +13,7 @@ describe('HexletCo', () => {
   it('set 1', () => {
     co(function* () {
       const x = yield getPromise(5);
-      assert.equal(x, 5);
+      expect(x).toBe(5);
     });
   });
 
@@ -24,7 +23,7 @@ describe('HexletCo', () => {
       const b = yield getPromise(2);
       const c = yield getPromise(3);
 
-      assert.deepEqual([1, 2, 3], [a, b, c]);
+      expect([1, 2, 3]).toEqual([a, b, c]);
     });
   });
 
@@ -38,9 +37,9 @@ describe('HexletCo', () => {
         error = err;
       }
 
-      assert.equal(error.message, 'boom');
+      expect(error.message).toBe('boom');
       const ret = yield getPromise(1);
-      assert.equal(ret, 1);
+      expect(ret).toBe(1);
     });
   });
 
@@ -53,27 +52,24 @@ describe('HexletCo', () => {
       } catch (err) {
         error = err;
       }
-      assert.equal(error.message, 'boom');
+      expect(error.message).toBe('boom');
     });
   });
 
-  it('set 5', done => {
-    co(function* () {
+  it('set 5', () => {
+    const result = co(function* () {
       const a = yield getPromise(1);
       return a;
-    }).then(a => {
-      assert.deepEqual(a, 1);
-      done();
     });
+    return expect(result).resolves.toBe(1);
   });
 
-  it('set 6', done => {
-    co(function* () {
-      const result = yield getPromise(1, new Error('boom'));
-      return result;
-    }).catch(error => {
-      assert.equal(error.message, 'boom');
-      done();
+  it('set 6', () => {
+    const result = co(function* () {
+      const data = yield getPromise(1, new Error('boom'));
+      return data;
     });
+
+    return expect(result).rejects.toBeInstanceOf(Error);
   });
 });
