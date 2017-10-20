@@ -1,5 +1,5 @@
 install:
-	yarn
+	npm install
 
 build:
 	npm run build

@@ -1,7 +1,6 @@
 // @flow
 
 import 'source-map-support/register';
-import 'babel-polyfill';
 
 /**
  * Generator based control flow
@@ -19,7 +18,7 @@ import 'babel-polyfill';
 const co = (generator: () => void, ...args: any) => {
   const iterator = generator(...args);
 
-  const next = result => {
+  const next = (result) => {
     const value = Promise.resolve(result.value);
     if (result.done) {
       return value;
@@ -27,7 +26,7 @@ const co = (generator: () => void, ...args: any) => {
 
     return value.then(
       res => next(iterator.next(res)),
-      err => next(iterator.throw(err))
+      err => next(iterator.throw(err)),
     );
   };
 

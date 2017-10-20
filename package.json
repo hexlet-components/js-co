@@ -21,10 +21,8 @@
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
   "dependencies": {
-  },
-  "dependencies": {
     "hexlet-pairs": "*",
-    "documentation": "^4.0.0-rc.1",
+    "documentation": "*",
     "source-map-support": "*",
     "babel-preset-env": "*",
     "babel-preset-flow": "*",
@@ -33,6 +31,7 @@
   },
   "devDependencies": {
     "babel-eslint": "*",
+    "babel-jest": "*",
     "babel-polyfill": "*",
     "babel-core": "*",
     "babel-cli": "*",
