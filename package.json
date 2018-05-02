@@ -6,9 +6,9 @@
   "scripts": {
     "documentation": "documentation",
     "test": "jest --colors",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "eslint": "eslint",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,24 +21,25 @@
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
   "dependencies": {
-    "hexlet-pairs": "*",
-    "documentation": "*",
-    "source-map-support": "*",
     "babel-preset-env": "*",
     "babel-preset-flow": "*",
     "babel-preset-stage-0": "*",
-    "debug": "*"
+    "debug": "*",
+    "hexlet-pairs": "^1.0.7"
   },
   "devDependencies": {
-    "babel-eslint": "*",
-    "babel-jest": "*",
-    "babel-polyfill": "*",
-    "babel-core": "*",
     "babel-cli": "*",
-    "eslint": "*",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-polyfill": "*",
+    "documentation": "^6.3.2",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-flowtype": "*",
-    "jest": "*"
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "jest": "^22.4.3",
+    "jest-cli": "^22.4.3"
   }
 }

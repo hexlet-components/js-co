@@ -1,7 +1,5 @@
 // @flow
 
-import 'source-map-support/register';
-
 /**
  * Generator based control flow
  * @name co
