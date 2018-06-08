@@ -20,26 +20,30 @@
     "url": "https://github.com/hexlet-components/js-co/issues"
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
-    "babel-preset-env": "*",
-    "babel-preset-flow": "*",
-    "babel-preset-stage-0": "*",
-    "debug": "*",
-    "hexlet-pairs": "^1.0.7"
+    "debug": "^3.1.0",
+    "hexlet-pairs": "^1.0.8"
   },
   "devDependencies": {
-    "babel-cli": "*",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-flow": "^7.0.0-beta.49",
+    "@babel/preset-stage-0": "^7.0.0-beta.49",
+    "@babel/register": "^7.0.0-beta.49",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
-    "babel-jest": "^22.4.3",
-    "babel-polyfill": "*",
+    "babel-jest": "^23.0.1",
     "documentation": "^6.3.2",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "*",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jest": "^21.15.1",
-    "jest": "^22.4.3",
-    "jest-cli": "^22.4.3"
+    "jest": "^23.1.0",
+    "jest-cli": "^23.1.0"
   }
 }
