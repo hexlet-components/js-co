@@ -1,3 +1,5 @@
+// @ts-check
+
 import co from '../src';
 
 const getPromise = (val, err) =>

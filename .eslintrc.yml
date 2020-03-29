@@ -2,13 +2,11 @@
 
 extends:
   - airbnb-base
-  - 'plugin:flowtype/recommended'
   - 'plugin:jest/recommended'
 
 parser: babel-eslint
 
 plugins:
-  - flowtype
   - jest
 
 env:

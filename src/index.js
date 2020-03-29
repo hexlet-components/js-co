@@ -1,4 +1,4 @@
-// @flow
+// @ts-check
 
 /**
  * Generator based control flow
@@ -13,7 +13,7 @@
  *   console.error(err.stack);
  * });
  */
-const co = (generator: () => void, ...args: any) => {
+const co = (generator, ...args) => {
   const iterator = generator(...args);
 
   const next = (result) => {
