@@ -1,13 +1,17 @@
+// @ts-check
+/* eslint func-names: ["error", "always", { "generators": "never" }] */
+
 import co from '../src';
 
-const getPromise = (val, err) =>
+const getPromise = (val, err) => (
   new Promise((resolve, reject) => {
     if (err) {
       reject(err);
       return;
     }
     resolve(val);
-  });
+  })
+);
 
 describe('HexletCo', () => {
   it('set 1', () => {

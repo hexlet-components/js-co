@@ -1,16 +1,10 @@
 ---
 
 extends:
-  - airbnb-base
-  - 'plugin:flowtype/recommended'
+  - 'airbnb-base'
   - 'plugin:jest/recommended'
 
 parser: babel-eslint
 
-plugins:
-  - flowtype
-  - jest
-
 env:
   node: true
-  jest/globals: true
