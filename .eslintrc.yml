@@ -1,14 +1,10 @@
 ---
 
 extends:
-  - airbnb-base
+  - 'airbnb-base'
   - 'plugin:jest/recommended'
 
 parser: babel-eslint
 
-plugins:
-  - jest
-
 env:
   node: true
-  jest/globals: true

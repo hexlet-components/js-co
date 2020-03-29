@@ -23,8 +23,8 @@ const co = (generator, ...args) => {
     }
 
     return value.then(
-      res => next(iterator.next(res)),
-      err => next(iterator.throw(err)),
+      (res) => next(iterator.next(res)),
+      (err) => next(iterator.throw(err)),
     );
   };
 

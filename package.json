@@ -7,7 +7,6 @@
     "documentation": "documentation",
     "test": "jest --colors",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "eslint": "eslint",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -20,28 +19,20 @@
     "url": "https://github.com/hexlet-components/js-co/issues"
   },
   "homepage": "https://github.com/hexlet-components/js-co#readme",
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "dependencies": {
-    "debug": "^3.1.0",
-    "@hexlet/pairs": "^1.0.9"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/preset-stage-0": "^7.0.0-beta.49",
-    "@babel/register": "^7.0.0-beta.49",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^8.2.3",
-    "babel-jest": "^23.0.1",
-    "documentation": "^6.3.2",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jest": "^21.15.1",
-    "jest": "^23.1.0",
-    "jest-cli": "^23.1.0"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.2.3",
+    "documentation": "^12.1.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.2.3",
+    "jest-cli": "^25.2.3"
   }
 }
